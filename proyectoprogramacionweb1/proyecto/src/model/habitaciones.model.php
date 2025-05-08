@@ -14,10 +14,10 @@ class HabitacionesModel{
 
     public function actualizarEstatusHabitacion($datos) {
         $db = Database::getInstance();
-        $datos_habitacion = [
+        $datos_habitacion = array(
             'id_habitacion' => $datos['id_habitacion'],
             'estatus_habitacion' => 1
-        ];
+        );
 
         $sql = "UPDATE Habitaciones 
             SET estatus_habitacion = :estatus_habitacion 

@@ -6,7 +6,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $apellido = null;
     $fecha_nacimiento = '';
     $documento = null;
-    $telefono = '';
+    $telefono = null;
     $genero = '';
     $discacidad = '';
     if ( isset($_POST['nombre']) ) {

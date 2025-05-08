@@ -148,7 +148,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <legend class="col-form-label col-sm-2 float-sm-left pt-0">Dicapacidad</legend>
+                                        <legend class="col-form-label col-sm-3 float-sm-left pt-0">Dicapacidad</legend>
                                         <div class="col-sm-10">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad1" value="Si" checked>

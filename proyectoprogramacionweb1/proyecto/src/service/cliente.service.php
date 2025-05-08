@@ -1,6 +1,9 @@
 <?php
-include '../model/habitaciones.model.php';
-include '../model/clientes.model.php';
+require_once '../model/habitaciones.model.php';
+require_once '../model/clientes.model.php';
+require_once '../model/cargo.model.php';
+require_once '../model/encabezado-cargo.model.php';
+require_once '../model/detalle-cargo.model.php';
 class ClienteData {
     private $_datos;
     public function __construct( $datos_cliente )
@@ -33,20 +36,51 @@ class ClienteData {
 
         unset($this->_datos['discapacidad']);
         $objeto_clientes = new ClientesModel();
-        $insertar_clientes = $objeto_clientes->insertarClientes($this->_datos);
-        if ( !$insertar_clientes ) {
+        $id_cliente = $objeto_clientes->insertarClientes($this->_datos);
+        if ( !$id_cliente ) {
             return 'No se pudo ingresar el cliente';
         }
 
-        //ya funciona
-//        $actualizar_habitacion = $objeto_habitaciones->actualizarEstatusHabitacion($habitacio_asignada);
-//        var_dump($actualizar_habitacion);
-//        if ( !$actualizar_habitacion ) {
-//            return 'No se pudo actualizar el estatus de la habitación';
-//        }
+        $actualizar_habitacion = $objeto_habitaciones->actualizarEstatusHabitacion($habitacio_asignada);
+        if ( !$actualizar_habitacion ) {
+            return 'No se pudo actualizar el estatus de la habitación';
+        }
 
+        $objeto_cargos = new CargoModel();
+        $cargos = $objeto_cargos->obtenerTodosLosCargo();
+        $id_cargo = '';
+        foreach ( $cargos as $rg_cargo ) {
+            if ( $rg_cargo['descripción'] == 'Habitación' ) {
+                $precio_habitacion = (int) $rg_cargo['precio_cargo'];
+                $id_cargo = (int) $rg_cargo['id_cargo'];
+            }
+        }
 
+        $datos_encabezado_cargo = array(
+            'id_cliente' => $id_cliente,
+            'id_habitacion' => $habitacio_asignada['id_habitacion'],
+            'total' => $precio_habitacion,
+            'estatus_cargo' => 1
+        );
+
+        $objeto_encabezado_cargos = new EncabezadoCargoModel();
+        $id_encabezado = $objeto_encabezado_cargos->insertarEncabezado($datos_encabezado_cargo);
+        if ( !$id_encabezado ) {
+            return 'No se pudo insertar el encabezado.';
+        }
+
+        $datos_detalle_cargos = array(
+            'id_encabezado' => $id_encabezado,
+            'id_cargo'      => $id_cargo
+        );
+
+        $objeto_detalle_cargos = new DetalleCargoModel();
+        $insert_detalle = $objeto_detalle_cargos->insertarDetalle($datos_detalle_cargos);
+        if ( !$insert_detalle ) {
+            return 'No se pudo insertar el detalle.';
+        }
+
+        return 'El cliente se ingreso exitosamente';
     }
 }
-
 ?>

@@ -23,9 +23,9 @@ class ClientesModel {
 
         $stmt = $db->prepare($sql);
 
-        $valor = false;
+        $valor = 0;
         if ( $stmt->execute($datos) ) {
-            $valor = true;
+            $valor = $db->lastInsertId();
         }
 
         return $valor;
