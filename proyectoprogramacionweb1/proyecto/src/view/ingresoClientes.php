@@ -103,31 +103,31 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Nombre</label>
-                                        <input type="text" class="form-control form-control-user"
+                                        <input type="text" class="form-control form-control-user ml-2""
                                                id="nombre" name="nombre" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <label>Apellido</label>
-                                        <input type="text" class="form-control form-control-user"
+                                        <input type="text" class="form-control form-control-user ml-2"
                                                id="apellido" name="apellido">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6">
                                         <label>Fecha de nacimiento</label>
-                                        <input type="date" class="form-control form-control-user"
+                                        <input type="date" class="form-control form-control-user ml-2"
                                                id="fechaNacimiento" name="fechaNacimiento" required>
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>DPI/Pasaporte</label>
-                                        <input type="text" class="form-control form-control-user"
+                                        <input type="text" class="form-control form-control-user ml-2"
                                                id="documentoDeIdentificacion" name="documentoDeIdentificacion">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Teléfono</label>
-                                        <input type="text" class="form-control form-control-user"
+                                        <input type="text" class="form-control form-control-user ml-2"
                                                id="telefono" name="telefono">
                                     </div>
                                     <div class="col-sm-6">
@@ -143,6 +143,23 @@
                                                 <input class="form-check-input" type="radio" name="genero" id="genero2" value="masculino">
                                                 <label class="form-check-label" for="genero2">
                                                     Femenino
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <legend class="col-form-label col-sm-3 float-sm-left pt-0">Dicapacidad</legend>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad1" value="Si" checked>
+                                                <label class="form-check-label" for="discapacidad">
+                                                    Si
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad2" value="No">
+                                                <label class="form-check-label" for="discapacidad2">
+                                                    No
                                                 </label>
                                             </div>
                                         </div>

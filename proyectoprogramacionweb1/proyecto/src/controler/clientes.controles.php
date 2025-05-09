@@ -2,14 +2,13 @@
 include '../service/cliente.service.php';
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-    var_dump('dentro del cliente');
     $nombre = '';
     $apellido = null;
     $fecha_nacimiento = '';
     $documento = null;
-    $telefono = '';
+    $telefono = null;
     $genero = '';
-
+    $discacidad = '';
     if ( isset($_POST['nombre']) ) {
         $nombre = $_POST['nombre'];
     }
@@ -34,6 +33,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $genero = $_POST['genero'];
     }
 
+    if ( isset($_POST['discapacidad']) ) {
+        $discacidad = $_POST['discapacidad'];
+    }
+
+    $fecha_ingreso = date('Y-m-d');
     $datos = array(
         'nombre' => $nombre,
         'apellido' => $apellido,
@@ -41,10 +45,15 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         'documentoDeIdentificacion' => $documento,
         'telefono' => $telefono,
         'genero' => $genero,
+        'discapacidad' => $discacidad,
+        'fechaIngreso' => $fecha_ingreso,
     );
 
     $objeto_cliente = new ClienteData($datos);
-    $objeto_cliente->registrarCliente();
+
+    if ( $objeto_cliente->registrarClienteService() ) {
+
+    }
 }
 
 ?>
