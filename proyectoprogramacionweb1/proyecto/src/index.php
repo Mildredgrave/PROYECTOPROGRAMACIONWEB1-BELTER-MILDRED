@@ -25,7 +25,11 @@
                     <li class="nav-item"><a class="nav-link" href="#">Habitaciones</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Reservas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Iniciar sesion</a></li>
                 </ul>
+
+
+
             </div>
         </div>
     </nav>
