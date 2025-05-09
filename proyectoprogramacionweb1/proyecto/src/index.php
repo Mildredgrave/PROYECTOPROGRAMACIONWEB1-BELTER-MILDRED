@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="imagenes/logohotel.png" alt="Logo Hotel" width="40" height="40">
+                <img src="../src/imagenes/logohotel.png" alt="Logo Hotel" width="40" height="40">
                 Hotel Paraíso
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservaciones/reservaciones.php">Reservas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Iniciar sesion</a></li>
                 </ul>
@@ -30,10 +30,62 @@
         </div>
     </nav>
 
+    <div id="content">
+        <!-- Cuadros de dialogo -->
+        <div class="modal fade" id="modalCotizacion" tabindex="-1" aria-labelledby="modalCotizacionLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modalCotizacionLabel">Nueva Reservación</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="controler/clientes.controles.php" method="POST">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombres:</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Apellidos:</label>
+                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha" class="form-label">Fecha Nacimiento:</label>
+                                <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="numeroDeIdentificacion" class="form-label">DPI / Pasaporte:</label>
+                                <input type="numero" class="form-control" id="documentoDeIdentificacion" name="documentoDeIdentificacion" placeholder="Ingrese su Numero de Identificación" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono:</label>
+                                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="genero" class="form-label">Genero:</label>
+                                <input type="genero" class="form-control" id="genero" name="genero" placeholder="Escriba su genero" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha" class="form-label">Fecha de Reservación:</label>
+                                <input type="date" class="form-control" id="fecha" name="fecha" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Reservar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <header class="text-center bg-light p-5">
         <h1 class="display-4">Bienvenido al Hotel Paraíso</h1>
         <p class="lead">Descansa, relájate y disfruta de una experiencia inolvidable.</p>
-        <a href="habitaciones.php" class="btn btn-primary btn-lg">Ver Habitaciones</a>
+        <a href="habitaciones.php" class="btn btn-primary">Ver Habitaciones</a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCotizacion">
+                Hacer una Reservación
+        </button>
     </header>
 
     <div id="carouselHotel" class="carousel slide" data-bs-ride="carousel">
