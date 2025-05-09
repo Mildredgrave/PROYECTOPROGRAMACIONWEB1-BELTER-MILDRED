@@ -2,7 +2,7 @@
     if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $usuarios = array(
             array(
-                'usuario' => 'Belter',
+                'usuario' => 'Admin',
                 'contrasenia' => '12345'
             )
         );
@@ -23,4 +23,4 @@
         }
     }
 
-?>      
+?>

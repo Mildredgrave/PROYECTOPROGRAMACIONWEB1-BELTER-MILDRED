@@ -8,8 +8,8 @@
 <body class="container mt-5">
 <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $nombre = $_POST['nombre'];
-        $telefono = $_POST['telefono'];
+        $Nombre = $_POST['Nombre'];
+        $Teléfono = $_POST['Teléfono'];
         $fecha_de_reservacion = $_POST['fecha'];
         $hora_de_reservacion = $_POST['hora'];
         $descripcion_de_la_reserva = $_POST['descripcion'];

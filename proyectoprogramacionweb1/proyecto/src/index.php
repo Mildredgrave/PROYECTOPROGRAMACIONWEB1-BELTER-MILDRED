@@ -27,9 +27,6 @@
                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Iniciar sesion</a></li>
                 </ul>
-
-
-
             </div>
         </div>
     </nav>
@@ -84,32 +81,8 @@
         ?>
     </div>
 
-
-
     <div class="container">
         <footer class="py-5">
-            <div class="row">
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Sección</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Inicio</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Servicios</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Reservas</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-5 offset-md-1 mb-3">
-                    <form>
-                        <h5>Suscríbete a nuestro boletín</h5>
-                        <p>Recibe novedades mensuales y promociones exclusivas.</p>
-                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                            <label for="newsletter1" class="visually-hidden">Correo electrónico</label>
-                            <input id="newsletter1" type="email" class="form-control" placeholder="Correo electrónico">
-                            <button class="btn btn-primary" type="submit">Suscribirse</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                 <p>&copy; 2025 Hotel Paraíso.</p>
                 <ul class="list-unstyled d-flex">
