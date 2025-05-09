@@ -22,7 +22,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Habitaciones</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Reservas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Iniciar sesion</a></li>
@@ -34,7 +33,7 @@
     <header class="text-center bg-light p-5">
         <h1 class="display-4">Bienvenido al Hotel Paraíso</h1>
         <p class="lead">Descansa, relájate y disfruta de una experiencia inolvidable.</p>
-        <a href="#" class="btn btn-primary btn-lg">Ver Habitaciones</a>
+        <a href="habitaciones.php" class="btn btn-primary btn-lg">Ver Habitaciones</a>
     </header>
 
     <div id="carouselHotel" class="carousel slide" data-bs-ride="carousel">
