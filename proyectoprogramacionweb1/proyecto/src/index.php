@@ -55,15 +55,32 @@
                             </div>
                             <div class="mb-3">
                                 <label for="numeroDeIdentificacion" class="form-label">DPI / Pasaporte:</label>
-                                <input type="numero" class="form-control" id="documentoDeIdentificacion" name="documentoDeIdentificacion" placeholder="Ingrese su Numero de Identificación" required>
+                                <input type="texto" class="form-control" id="documentoDeIdentificacion" name="documentoDeIdentificacion" placeholder="Ingrese su Numero de Identificación" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="NIT" class="form-label">NIT:</label>
+                                <input type="texto" class="form-control" id="nit" name="nit" placeholder="Ingrese su NIT" required>
                             </div>
                             <div class="mb-3">
                                 <label for="telefono" class="form-label">Teléfono:</label>
-                                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
+                                <input type="texto" class="form-control" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
                             </div>
                             <div class="mb-3">
-                                <label for="genero" class="form-label">Genero:</label>
-                                <input type="genero" class="form-control" id="genero" name="genero" placeholder="Escriba su genero" required>
+                                <legend class="col-form-label col-sm-2 float-sm-left pt-0">Genero</legend>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genero" id="genero1" value="femenino" checked>
+                                        <label class="form-check-label" for="genero1">
+                                            Masculino
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genero" id="genero2" value="masculino">
+                                        <label class="form-check-label" for="genero2">
+                                            Femenino
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="fecha" class="form-label">Fecha de Reservación:</label>
