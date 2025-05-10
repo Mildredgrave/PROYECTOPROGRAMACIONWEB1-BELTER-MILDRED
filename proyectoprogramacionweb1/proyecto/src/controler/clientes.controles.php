@@ -1,5 +1,5 @@
 <?php
-include '../service/cliente.service.php';
+require_once '../service/cliente.service.php';
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $nombre = '';
@@ -51,10 +51,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     );
 
     $objeto_cliente = new ClienteData($datos);
-
-    if ( $objeto_cliente->registrarClienteService() ) {
-
-    }
+    $resultado = $objeto_cliente->registrarClienteService();
+    echo "<script>
+          alert(" . json_encode($resultado) . ");
+          window.location.href = '../view/ingresoClientes.php';
+      </script>";
+    exit();
 }
 
 ?>

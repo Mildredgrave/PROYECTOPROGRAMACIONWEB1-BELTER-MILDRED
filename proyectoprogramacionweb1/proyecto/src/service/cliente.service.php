@@ -48,6 +48,7 @@ class ClienteData {
 
         $objeto_cargos = new CargoModel();
         $cargos = $objeto_cargos->obtenerTodosLosCargo();
+        $precio_habitacion = 0;
         $id_cargo = '';
         foreach ( $cargos as $rg_cargo ) {
             if ( $rg_cargo['descripción'] == 'Habitación' ) {

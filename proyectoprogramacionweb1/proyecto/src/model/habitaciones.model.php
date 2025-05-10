@@ -2,7 +2,7 @@
 require_once '../db/conexion.php';
 class HabitacionesModel{
 
-    public function optenerhabitacionesPorEdad($order) {
+    public function     optenerhabitacionesPorEdad($order) {
         $db = Database::getInstance();
         $stmt = $db->prepare("SELECT * FROM Habitaciones WHERE estatus_habitacion = :status
                                     ORDER BY numero_habitacion " . $order);

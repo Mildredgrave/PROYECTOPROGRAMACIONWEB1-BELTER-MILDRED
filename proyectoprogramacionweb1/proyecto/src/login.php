@@ -58,9 +58,47 @@
                     <div class="alert alert-danger"><?php echo $error; ?></div>
                 <?php endif; ?>
 
+<<<<<<< Updated upstream
                 <form method="post" action="./controler/login.controler.php">
                     <div class="mb-3">
                         <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Ingrese su Usuario" required>
+=======
+<div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-xl-10 col-lg-12 col-md-9">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">El Paraiso</h1>
+                                </div>
+                                <form class="user" method="post" action="./controler/login.controler.php">
+                                    <div class="form-group">
+                                        <input type="usuario" class="form-control form-control-user"
+                                               id="usuario" placeholder="Ingrese su Usuario" name="usuario"
+                                                required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user"
+                                               id="contrasenia" placeholder="Ingrese su Contraseña" name="contrasenia"
+                                        required>
+                                    </div>
+                                    <div  class="form-group">
+                                        <input type="submit" class="btn btn-primary btn-user btn-block" placeholder="Ingresar">
+                                    </div>
+                                </form>
+                                <hr>
+                            </div>
+                        </div>
+>>>>>>> Stashed changes
                     </div>
                     <div class="mb-3">
                         <input type="password" class="form-control form-control-user" id="contrasenia" name="contrasenia" placeholder="Ingrese su Contraseña" required>

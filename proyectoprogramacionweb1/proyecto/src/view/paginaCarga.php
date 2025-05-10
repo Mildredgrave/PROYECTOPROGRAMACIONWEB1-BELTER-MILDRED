@@ -71,18 +71,21 @@
 
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
+<<<<<<< Updated upstream
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
 
+=======
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+>>>>>>> Stashed changes
                     <div class="topbar-divider d-none d-sm-block"></div>
-
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -91,16 +94,17 @@
                             <img class="img-profile rounded-circle"
                                  src="../img/undraw_profile.svg">
                         </a>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                     </li>
                 </ul>
-
             </nav>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Hotel Paraiso</h1>
                 <p class="mb-4">Información sobre clientes y habitaciones.</p>
