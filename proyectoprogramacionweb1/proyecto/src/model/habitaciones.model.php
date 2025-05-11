@@ -4,7 +4,7 @@ class HabitacionesModel{
 
     public function     optenerhabitacionesPorEdad($order) {
         $db = Database::getInstance();
-        $stmt = $db->prepare("SELECT * FROM Habitaciones WHERE estatus_habitacion = :status
+        $stmt = $db->prepare("SELECT * FROM habitaciones WHERE estatus_habitacion = :status
                                     ORDER BY numero_habitacion " . $order);
         $stmt->execute(['status' => 0]);
         $habitaciones = $stmt->fetchAll();
@@ -19,7 +19,7 @@ class HabitacionesModel{
             'estatus_habitacion' => 1
         );
 
-        $sql = "UPDATE Habitaciones 
+        $sql = "UPDATE habitaciones 
             SET estatus_habitacion = :estatus_habitacion 
             WHERE id_habitacion = :id_habitacion
             ";

@@ -3,7 +3,7 @@ require_once '../db/conexion.php';
 class ClientesModel {
     public function insertarClientes($datos) {
         $db = Database::getInstance();
-        $sql = "INSERT INTO Clientes (
+        $sql = "INSERT INTO clientes (
                 nombre, 
                 apellido, 
                 fecha_nacimiento, 

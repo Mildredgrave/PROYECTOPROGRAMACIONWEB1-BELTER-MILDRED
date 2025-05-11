@@ -9,7 +9,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $telefono = null;
     $genero = '';
     $discacidad = '';
-
+    $nit = '';
+    $reservacion = 'no';
+    $fecha_ingreso = date('Y-m-d');
+    $url = '../view/ingresoClientes.php';
+    var_dump($_POST);
+    die;
     if ( isset($_POST['nombre']) ) {
         $nombre = $_POST['nombre'];
     }
@@ -38,7 +43,17 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $discacidad = $_POST['discapacidad'];
     }
 
-    $fecha_ingreso = date('Y-m-d');
+    if ( isset($_POST['nit']) ) {
+        $discacidad = $_POST['discapacidad'];
+    }
+    if ( isset($_POST['reservacion']) && isset($_POST['fecha']) &&
+        $_POST['reservacion'] == 'si'
+    ) {
+        $fecha_ingreso = $_POST['fecha'];
+        $reservacion = $_POST['reservacion'];
+        $url = '../index.php';
+    }
+
     $datos = array(
         'nombre' => $nombre,
         'apellido' => $apellido,
@@ -46,15 +61,17 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         'documentoDeIdentificacion' => $documento,
         'telefono' => $telefono,
         'genero' => $genero,
+        'nit' => $genero,
         'discapacidad' => $discacidad,
         'fechaIngreso' => $fecha_ingreso,
+        'reservacion' => $reservacion
     );
 
     $objeto_cliente = new ClienteData($datos);
     $resultado = $objeto_cliente->registrarClienteService();
     echo "<script>
           alert(" . json_encode($resultado) . ");
-          window.location.href = '../view/ingresoClientes.php';
+          window.location.href = '$url';
       </script>";
     exit();
 }

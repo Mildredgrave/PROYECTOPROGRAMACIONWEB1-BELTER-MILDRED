@@ -41,47 +41,51 @@ class ClienteData {
             return 'No se pudo ingresar el cliente';
         }
 
-        $actualizar_habitacion = $objeto_habitaciones->actualizarEstatusHabitacion($habitacio_asignada);
-        if ( !$actualizar_habitacion ) {
-            return 'No se pudo actualizar el estatus de la habitación';
-        }
-
-        $objeto_cargos = new CargoModel();
-        $cargos = $objeto_cargos->obtenerTodosLosCargo();
-        $precio_habitacion = 0;
-        $id_cargo = '';
-        foreach ( $cargos as $rg_cargo ) {
-            if ( $rg_cargo['descripción'] == 'Habitación' ) {
-                $precio_habitacion = (int) $rg_cargo['precio_cargo'];
-                $id_cargo = (int) $rg_cargo['id_cargo'];
+        if ( $this->_datos['reservacion'] != 'no' ) {
+            $actualizar_habitacion = $objeto_habitaciones->actualizarEstatusHabitacion($habitacio_asignada);
+            if ( !$actualizar_habitacion ) {
+                return 'No se pudo actualizar el estatus de la habitación';
             }
+
+            $objeto_cargos = new CargoModel();
+            $cargos = $objeto_cargos->obtenerTodosLosCargo();
+            $precio_habitacion = 0;
+            $id_cargo = '';
+            foreach ( $cargos as $rg_cargo ) {
+                if ( $rg_cargo['descripción'] == 'Habitación' ) {
+                    $precio_habitacion = (int) $rg_cargo['precio_cargo'];
+                    $id_cargo = (int) $rg_cargo['id_cargo'];
+                }
+            }
+
+            $datos_encabezado_cargo = array(
+                'id_cliente' => $id_cliente,
+                'id_habitacion' => $habitacio_asignada['id_habitacion'],
+                'total' => $precio_habitacion,
+                'estatus_cargo' => 1
+            );
+
+            $objeto_encabezado_cargos = new EncabezadoCargoModel();
+            $id_encabezado = $objeto_encabezado_cargos->insertarEncabezado($datos_encabezado_cargo);
+            if ( !$id_encabezado ) {
+                return 'No se pudo insertar el encabezado.';
+            }
+
+            $datos_detalle_cargos = array(
+                'id_encabezado' => $id_encabezado,
+                'id_cargo'      => $id_cargo
+            );
+
+            $objeto_detalle_cargos = new DetalleCargoModel();
+            $insert_detalle = $objeto_detalle_cargos->insertarDetalle($datos_detalle_cargos);
+            if ( !$insert_detalle ) {
+                return 'No se pudo insertar el detalle.';
+            }
+            return 'El cliente se ingreso exitosamente';
+        } else {
+
         }
 
-        $datos_encabezado_cargo = array(
-            'id_cliente' => $id_cliente,
-            'id_habitacion' => $habitacio_asignada['id_habitacion'],
-            'total' => $precio_habitacion,
-            'estatus_cargo' => 1
-        );
-
-        $objeto_encabezado_cargos = new EncabezadoCargoModel();
-        $id_encabezado = $objeto_encabezado_cargos->insertarEncabezado($datos_encabezado_cargo);
-        if ( !$id_encabezado ) {
-            return 'No se pudo insertar el encabezado.';
-        }
-
-        $datos_detalle_cargos = array(
-            'id_encabezado' => $id_encabezado,
-            'id_cargo'      => $id_cargo
-        );
-
-        $objeto_detalle_cargos = new DetalleCargoModel();
-        $insert_detalle = $objeto_detalle_cargos->insertarDetalle($datos_detalle_cargos);
-        if ( !$insert_detalle ) {
-            return 'No se pudo insertar el detalle.';
-        }
-
-        return 'El cliente se ingreso exitosamente';
     }
 }
 ?>

@@ -42,11 +42,11 @@
                         <form action="controler/clientes.controles.php" method="POST">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombres:</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" maxlength="50" required>
                             </div>
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Apellidos:</label>
-                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
+                                <input type="text" class="form-control" id="apellido" name="apellido" maxlength="50" placeholder="Ingrese su apellido">
                             </div>
                             <div class="mb-3">
                                 <label for="fecha" class="form-label">Fecha Nacimiento:</label>
@@ -54,15 +54,19 @@
                             </div>
                             <div class="mb-3">
                                 <label for="numeroDeIdentificacion" class="form-label">DPI / Pasaporte:</label>
-                                <input type="texto" class="form-control" id="documentoDeIdentificacion" name="documentoDeIdentificacion" placeholder="Ingrese su Numero de Identificación" required>
+                                <input type="texto" class="form-control" id="documentoDeIdentificacion" name="documentoDeIdentificacion" placeholder="Ingrese su Numero de Identificación" maxlength="20">
                             </div>
                             <div class="mb-3">
                                 <label for="NIT" class="form-label">NIT:</label>
-                                <input type="texto" class="form-control" id="nit" name="nit" placeholder="Ingrese su NIT" required>
+                                <input type="texto" class="form-control" id="nit" name="nit" placeholder="Ingrese su NIT" maxlength="10">
                             </div>
                             <div class="mb-3">
                                 <label for="telefono" class="form-label">Teléfono:</label>
-                                <input type="texto" class="form-control" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
+                                <input type="texto" class="form-control" id="telefono" name="telefono" placeholder="Ingrese su teléfono" maxlength="50">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha" class="form-label">Fecha de Reservación:</label>
+                                <input type="date" class="form-control" id="fecha" name="fecha" required>
                             </div>
                             <div class="mb-3">
                                 <legend class="col-form-label col-sm-2 float-sm-left pt-0">Genero</legend>
@@ -82,8 +86,21 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="fecha" class="form-label">Fecha de Reservación:</label>
-                                <input type="date" class="form-control" id="fecha" name="fecha" required>
+                                <legend class="col-form-label col-sm-2 float-sm-left pt-0">Reservación</legend>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reservacion" id="genero1" value="si" checked>
+                                        <label class="form-check-label" for="reservacionSi">
+                                            Sí
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reservacion" id="genero2" value="no" disabled>
+                                        <label class="form-check-label" for="reservacionNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Reservar</button>
