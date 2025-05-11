@@ -9,12 +9,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $telefono = null;
     $genero = '';
     $discacidad = '';
-    $nit = '';
+    $nit = null;
     $reservacion = 'no';
     $fecha_ingreso = date('Y-m-d');
     $url = '../view/ingresoClientes.php';
-    var_dump($_POST);
-    die;
+
     if ( isset($_POST['nombre']) ) {
         $nombre = $_POST['nombre'];
     }
@@ -44,7 +43,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     }
 
     if ( isset($_POST['nit']) ) {
-        $discacidad = $_POST['discapacidad'];
+        $nit = $_POST['nit'];
     }
     if ( isset($_POST['reservacion']) && isset($_POST['fecha']) &&
         $_POST['reservacion'] == 'si'
@@ -58,12 +57,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         'nombre' => $nombre,
         'apellido' => $apellido,
         'fechaNacimiento' => $fecha_nacimiento,
+        'fechaIngreso' => $fecha_ingreso,
         'documentoDeIdentificacion' => $documento,
         'telefono' => $telefono,
         'genero' => $genero,
-        'nit' => $genero,
+        'nit' => $nit,
         'discapacidad' => $discacidad,
-        'fechaIngreso' => $fecha_ingreso,
         'reservacion' => $reservacion
     );
 

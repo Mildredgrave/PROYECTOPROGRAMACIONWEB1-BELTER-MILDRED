@@ -3,6 +3,9 @@ require_once '../db/conexion.php';
 class ClientesModel {
     public function insertarClientes($datos) {
         $db = Database::getInstance();
+
+        unset($datos['reservacion']);
+        var_dump($datos);
         $sql = "INSERT INTO clientes (
                 nombre, 
                 apellido, 
@@ -10,7 +13,8 @@ class ClientesModel {
                 fecha_registro_habitacion, 
                 dpi_passaporte, 
                 telefono, 
-                genero
+                genero,
+                nit
             ) VALUES (
                 :nombre, 
                 :apellido, 
@@ -18,7 +22,8 @@ class ClientesModel {
                 :fechaIngreso, 
                 :documentoDeIdentificacion, 
                 :telefono, 
-                :genero
+                :genero,
+                :nit
             )";
 
         $stmt = $db->prepare($sql);

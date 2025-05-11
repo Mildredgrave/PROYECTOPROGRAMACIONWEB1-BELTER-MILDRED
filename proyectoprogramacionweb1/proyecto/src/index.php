@@ -72,13 +72,13 @@
                                 <legend class="col-form-label col-sm-2 float-sm-left pt-0">Genero</legend>
                                 <div class="col-sm-10">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="genero" id="genero1" value="femenino" checked>
+                                        <input class="form-check-input" type="radio" name="genero" id="genero1" value="F" checked>
                                         <label class="form-check-label" for="genero1">
                                             Masculino
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="genero" id="genero2" value="masculino">
+                                        <input class="form-check-input" type="radio" name="genero" id="genero2" value="M">
                                         <label class="form-check-label" for="genero2">
                                             Femenino
                                         </label>
