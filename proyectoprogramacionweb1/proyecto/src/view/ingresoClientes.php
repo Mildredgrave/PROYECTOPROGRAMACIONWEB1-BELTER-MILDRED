@@ -33,7 +33,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-hotel"></i>
             </div>
             <div class="sidebar-brand-text mx-3">Admin Hotel Paraiso</div>
         </a>
@@ -74,18 +74,22 @@
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <div class="topbar-divider d-none d-sm-block"></div>
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Empleado</span>
-                            <img class="img-profile rounded-circle"
-                                 src="../img/undraw_profile.svg">
-                        </a>
-                    </li>
-                </ul>
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
 
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Empleado</span>
+                                <img class="img-profile rounded-circle"
+                                     src="../img/undraw_profile.svg">
+                            </a>
+                        </li>
+                    </ul>
             </nav>
             <!-- End of Topbar -->
 
@@ -130,8 +134,15 @@
                                         <input type="text" class="form-control form-control-user ml-2"
                                                id="telefono" name="telefono">
                                     </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>NIT</label>
+                                        <input type="text" class="form-control form-control-user ml-2"
+                                               id="nit" name="nit">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <div class="col-sm-6">
-                                        <legend class="col-form-label col-sm-2 float-sm-left pt-0">Genero</legend>
+                                        <legend class="col-form-label col-sm-10 float-sm-left pt-0">Genero</legend>
                                         <div class="col-sm-10">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="genero" id="genero1" value="femenino" checked>
@@ -148,7 +159,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <legend class="col-form-label col-sm-3 float-sm-left pt-0">Dicapacidad</legend>
+                                        <legend class="col-form-label col-sm-10 float-sm-left pt-0">Dicapacidad</legend>
                                         <div class="col-sm-10">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad1" value="Si" checked>
@@ -166,7 +177,7 @@
                                     </div>
                                 </div>
                                 <div  class="form-group">
-                                    <input type="submit" class="btn btn-primary btn-user btn-block" placeholder="Guardar">
+                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Guardar">
                                 </div>
                             </form>
                         </div>

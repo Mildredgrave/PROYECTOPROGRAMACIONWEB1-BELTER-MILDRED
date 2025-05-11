@@ -14,8 +14,8 @@
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
@@ -68,7 +68,6 @@
 
         <!-- Main Content -->
         <div id="content">
-
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                 <!-- Sidebar Toggle (Topbar) -->
@@ -78,81 +77,53 @@
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
-                    <div class="topbar-divider d-none d-sm-block"></div>
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Empleado</span>
-                            <img class="img-profile rounded-circle"
-                                 src="../img/undraw_profile.svg">
-                        </a>
-                    </li>
-                </ul>
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Empleado</span>
+                                <img class="img-profile rounded-circle"
+                                     src="../img/undraw_profile.svg">
+                            </a>
+                        </li>
+                    </ul>
             </nav>
+            <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Hotel Paraiso</h1>
-                <p class="mb-4">Información sobre clientes y habitaciones.</p>
-                <!-- DataTales Example -->
+                <h1 class="h3 mb-2 text-gray-800">Agregar Cargos</h1>
+                <p class="mb-4">Esta parte nos servira para agregar otros servicios o cargos al cliente.</p>
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Seleccionar Productos Nombre Cliente</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th>Habitación</th>
-                                    <th>Cliente</th>
-                                    <th>Estatus</th>
-                                    <th>Total</th>
-                                    <th>Fecha Ingreso</th>
-                                    <th>Fecha Salida</th>
-                                    <th>Agregar Productos</th>
-                                    <th>Darle de Baja Cliente</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Habitación 1</td>
-                                    <td>Juan Perez</td>
-                                    <td>Ocupada</td>
-                                    <td>350</td>
-                                    <td>2011/04/25</td>
-                                    <td>2011/04/25</td>
-                                    <td>
-                                        <a href="./paginaAgregarCostos.php" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                             <i class="fas fa-shopping-cart"></i>
-                                        </span>
-                                            <span class="text">Agregar Costos</span>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-success btn-icon-split
-                                        bg-gradient-danger">
-                                        <span class="icon text-white-50">
-                                             <i class="fas fa-long-arrow-alt-right"></i>
-                                        </span>
-                                            <span class="text">Salir del Hotel</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <form class="user" method="post" action="../controler/clientes.controles.php">
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <label for="exampleFormControlSelect2" class="ml-4">Example multiple select</label>
+                                        <select multiple class="form-control ml-4" id="exampleFormControlSelect2">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div  class="form-group">
+                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Agregar Cargos">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <!-- /.container-fluid -->
-
         </div>
         <!-- End of Main Content -->
 

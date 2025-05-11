@@ -22,8 +22,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Reservas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Iniciar sesión</a></li>
                 </ul>
             </div>
@@ -36,43 +34,43 @@
             <?php
             $habitaciones = [
                 [
-                    "nombre" => "Habitación Estándar",
-                    "descripcion" => "Perfecta para una estadía corta con todas las comodidades básicas.",
+                    "nombre" => "Pareja Romántica",
+                    "descripcion" => "Un espacio acogedor y romántico, ideal para disfrutar en pareja con detalles especiales para una velada inolvidable.",
                     "imagen" => "imagenes/Habitación Estándar.jpeg"
                 ],
                 [
-                    "nombre" => "Suite Familiar",
-                    "descripcion" => "Espacio amplio ideal para familias, con zona de estar y balcón.",
+                    "nombre" => "Pareja Ejecutiva",
+                    "descripcion" => "Habitación moderna y elegante, perfecta para viajes de negocios en pareja, con un área de trabajo cómoda y servicios ejecutivos.",
                     "imagen" => "imagenes/Suite Familiar.jpg"
                 ],
                 [
-                    "nombre" => "Suite Lujo",
-                    "descripcion" => "Diseñada para el confort máximo, con jacuzzi privado y vista al mar.",
+                    "nombre" => "Pareja Premium",
+                    "descripcion" => "Una experiencia de lujo para parejas, con jacuzzi privado y vistas excepcionales para un descanso inigualable.",
                     "imagen" => "imagenes/SuiteLujo.jpg"
                 ],
                 [
-                    "nombre" => "Habitación Económica",
-                    "descripcion" => "Una opción asequible sin sacrificar comodidad ni limpieza.",
+                    "nombre" => "Pareja con Jacuzzi",
+                    "descripcion" => "Un refugio íntimo con jacuzzi privado para relajarse y disfrutar en pareja.",
                     "imagen" => "imagenes/habitacioneconomica.webp"
                 ],
                 [
-                    "nombre" => "Habitación Triple",
-                    "descripcion" => "Ideal para grupos pequeños o familias con niños.",
+                    "nombre" => "Pareja Suite",
+                    "descripcion" => "Una suite espaciosa y elegante, diseñada para parejas que buscan comodidad y privacidad en un ambiente exclusivo.",
                     "imagen" => "imagenes/habitaciontriple.jpg"
                 ],
                 [
-                    "nombre" => "Suite Ejecutiva",
-                    "descripcion" => "Perfecta para viajes de negocios, con escritorio y Wi-Fi rápido.",
+                    "nombre" => "Pareja Mar",
+                    "descripcion" => "Habitación con vistas espectaculares al mar, perfecta para disfrutar de la brisa y relajarse en pareja.",
                     "imagen" => "imagenes/suiteejecutiva.jpg"
                 ],
                 [
-                    "nombre" => "Habitación Romántica",
-                    "descripcion" => "Decorada especialmente para parejas, con ambientación cálida.",
+                    "nombre" => "Pareja Rio",
+                    "descripcion" => "Una habitación acogedora y cálida, con vistas al río y detalles que invitan al descanso y la tranquilidad.",
                     "imagen" => "imagenes/habitacionromatica.jpg"
                 ],
                 [
-                    "nombre" => "Penthouse VIP",
-                    "descripcion" => "La mejor vista del hotel, con cocina completa y terraza privada.",
+                    "nombre" => "Pareja Presidencial",
+                    "descripcion" => "La máxima expresión de lujo y confort, con terraza privada y vistas panorámicas para una experiencia única en pareja.",
                     "imagen" => "imagenes/vip.jpg"
                 ]
             ];

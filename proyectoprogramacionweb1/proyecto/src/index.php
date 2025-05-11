@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="../src/imagenes/logohotel.png" alt="Logo Hotel" width="40" height="40">
+                <img src="imagenes/logohotel.png" alt="Logo Hotel" width="40" height="40">
                 Hotel Paraíso
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -21,9 +21,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="reservaciones/reservaciones.php">Reservas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#carouselHotel">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#misionVision">Misión y Vision</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Iniciar sesion</a></li>
                 </ul>
             </div>
@@ -131,7 +130,7 @@
     </div>
 
 
-    <div class="container my-5 text-center" >
+    <div class="container my-5 text-center" id="misionVision" >
         <?php
         $valores = [
             ["nombre" => "MISIÓN","descripcion" => "En Hotel El Paraíso, nos comprometemos a brindar a nuestros huéspedes una experiencia única e inolvidable en un entorno natural, acogedor y lleno de confort. Nos enfocamos en ofrecer servicios de alta calidad, atención personalizada y hospitalidad excepcional para garantizar estancias placenteras. Promovemos el turismo sostenible, respetando el medio ambiente y las comunidades locales, mientras creamos un ambiente ideal para el descanso, la recreación y el bienestar."],

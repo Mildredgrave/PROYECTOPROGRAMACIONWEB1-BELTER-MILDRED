@@ -9,7 +9,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $telefono = null;
     $genero = '';
     $discacidad = '';
-    var_dump($_POST);
+
     if ( isset($_POST['nombre']) ) {
         $nombre = $_POST['nombre'];
     }
