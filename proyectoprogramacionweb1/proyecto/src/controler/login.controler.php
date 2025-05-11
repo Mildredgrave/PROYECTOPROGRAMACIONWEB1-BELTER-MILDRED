@@ -8,8 +8,8 @@
         );
 
         foreach ( $usuarios as $rg ) {
-            if ( $rg['usuario'] = $_POST['usuario'] &&
-                $rg['contrasenia'] = $_POST['contrasenia']
+            if ( $rg['usuario'] == $_POST['usuario'] &&
+                $rg['contrasenia'] == $_POST['contrasenia']
             ) {
                 echo '<script>window.location.href = "../view/paginaCarga.php"</script>>';
                 exit();

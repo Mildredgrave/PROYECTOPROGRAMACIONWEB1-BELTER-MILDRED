@@ -34,15 +34,19 @@ class ClienteData {
         }
 
         $objeto_habitaciones = new HabitacionesModel();
+        $objeto_encabezado_cargos = '';
+        $datos_habitaciones = array();
         if ( $this->_datos['reservacion'] == 'si'  ) {
             $fecha = $this->_datos['fechaIngreso'];
             $objeto_reservacion = new ReservacionesModel();
-            $reservas = $objeto_reservacion->obtenerInformacionReservaFecha($order, $fecha);
-            $habitacion = $objeto_habitaciones->obtenerhabitacionesPorEdadReservas($order, $reservas);
-        } else {
+            $datos_habitaciones = $objeto_reservacion->obtenerInformacionReservaFecha($order, $fecha);
 
+        } else {
+            $objeto_encabezado_cargos = new EncabezadoCargoModel();
+            $datos_habitaciones = $objeto_encabezado_cargos->obtenerEncabezadoActivo();
         }
 
+        $habitacion = $objeto_habitaciones->obtenerhabitacionesPorEdadReservas($order, $datos_habitaciones);
         $habitacio_asignada = array();
         if ( !empty($habitacion) ) {
             $habitacio_asignada = $habitacion[0];
@@ -58,17 +62,12 @@ class ClienteData {
         }
 
         if ( $this->_datos['reservacion'] == 'no' ) {
-//            $actualizar_habitacion = $objeto_habitaciones->actualizarEstatusHabitacion($habitacio_asignada);
-//            if ( !$actualizar_habitacion ) {
-//                return 'No se pudo actualizar el estatus de la habitación';
-//            }
-
             $objeto_cargos = new CargoModel();
             $cargos = $objeto_cargos->obtenerTodosLosCargo();
             $precio_habitacion = 0;
             $id_cargo = '';
             foreach ( $cargos as $rg_cargo ) {
-                if ( $rg_cargo['descripción'] == 'Habitación' ) {
+                if ( $rg_cargo['descripcion'] == 'Habitación' ) {
                     $precio_habitacion = (int) $rg_cargo['precio_cargo'];
                     $id_cargo = (int) $rg_cargo['id_cargo'];
                 }
@@ -81,7 +80,6 @@ class ClienteData {
                 'estatus_cargo' => 1
             );
 
-            $objeto_encabezado_cargos = new EncabezadoCargoModel();
             $id_encabezado = $objeto_encabezado_cargos->insertarEncabezado($datos_encabezado_cargo);
             if ( !$id_encabezado ) {
                 return 'No se pudo insertar el encabezado.';

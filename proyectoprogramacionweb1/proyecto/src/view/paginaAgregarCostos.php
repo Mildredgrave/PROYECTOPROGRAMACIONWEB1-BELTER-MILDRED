@@ -1,3 +1,6 @@
+<?php
+require_once '../model/cargo.model.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,11 +111,17 @@
                                     <div class="col-sm-12">
                                         <label for="exampleFormControlSelect2" class="ml-4">Example multiple select</label>
                                         <select multiple class="form-control ml-4" id="exampleFormControlSelect2">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <?php
+                                                $objeto_cargo = new CargoModel();
+                                                $obtener_cargos = $objeto_cargo->obtenerCargosAlimentos();
+
+                                                foreach ( $obtener_cargos as $registros ) {
+                                                    $linea_data = $registros['descripcion'] . ' ' . $registros['precio_cargo'];
+                                                    echo <<<END
+                                                    <option>$linea_data</option>
+                                                    END;
+                                                }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>

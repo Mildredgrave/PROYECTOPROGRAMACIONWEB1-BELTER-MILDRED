@@ -26,5 +26,12 @@ class EncabezadoCargoModel{
         return $valor;
     }
 
-    public function obtenerEncabezadoActivo()
+    public function  obtenerEncabezadoActivo() {
+        $db = Database::getInstance();
+        $stmt = $db->prepare("SELECT id_habitacion FROM encabezado_cargo WHERE estatus_cargo = 1");
+        $stmt->execute();
+        $datos = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
+
+        return $datos;
+    }
 }
