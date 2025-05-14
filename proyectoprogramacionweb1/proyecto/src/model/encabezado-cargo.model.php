@@ -34,4 +34,32 @@ class EncabezadoCargoModel{
 
         return $datos;
     }
+
+    public function  obtenerTotalEncabezado($id_cliente) {
+        $db = Database::getInstance();
+        $stmt = $db->prepare("SELECT total, id_encabezado FROM encabezado_cargo 
+             WHERE estatus_cargo = 1 AND id_cliente = :id_cliente");
+        $stmt->execute(['id_cliente' => $id_cliente]);
+        $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $datos;
+    }
+
+    public function actualizarTotalEncabezado($datos) {
+        $db = Database::getInstance();
+
+        $sql = "UPDATE encabezado_cargo 
+            SET total = :total 
+            WHERE id_cliente = :id_cliente
+            ";
+
+        $stmt = $db->prepare($sql);
+
+        $valor = false;
+        if ( $stmt->execute($datos) ) {
+            $valor = true;
+        }
+
+        return $valor;
+    }
 }

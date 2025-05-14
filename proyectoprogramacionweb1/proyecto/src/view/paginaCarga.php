@@ -1,3 +1,6 @@
+<?php
+require_once '../model/clientes.model.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,31 +122,57 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Habitación 1</td>
-                                    <td>Juan Perez</td>
-                                    <td>Ocupada</td>
-                                    <td>350</td>
-                                    <td>2011/04/25</td>
-                                    <td>2011/04/25</td>
-                                    <td>
-                                        <a href="./paginaAgregarCostos.php" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                             <i class="fas fa-shopping-cart"></i>
-                                        </span>
-                                            <span class="text">Agregar Costos</span>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-success btn-icon-split
-                                        bg-gradient-danger">
-                                        <span class="icon text-white-50">
-                                             <i class="fas fa-long-arrow-alt-right"></i>
-                                        </span>
-                                            <span class="text">Salir del Hotel</span>
-                                        </a>
-                                    </td>
-                                </tr>
+
+                                    <?php
+                                        $objeto_clientes = new ClientesModel();
+                                        $clientes = $objeto_clientes->obtenerClientesTabla();
+                                        foreach ( $clientes as $rg_clientes ) {
+                                            $id_cliente = $rg_clientes['id_cliente'];
+                                            $habitacion = $rg_clientes['nombre_habitacion'];
+                                            $nombre = $rg_clientes['nombre'];
+                                            $apellido = '';
+                                            $total = number_format( (float) $rg_clientes['total'], 2);
+                                            $fecha_ingreso = date('d-m-Y', strtotime($rg_clientes['fecha_registro_habitacion']));
+                                            $fecha_salida = '';
+
+                                            if ( isset($rg_clientes['fecha_salida']) ) {
+                                                $fecha_salida = date('d-m-Y', strtotime($rg_clientes['fecha_salida']));
+                                            }
+
+                                            if ( isset($rg_clientes['apellido']) ) {
+                                                $apellido = $rg_clientes['apellido'];
+                                                $nombre .= ' ' . $apellido;
+                                            }
+
+                                            echo <<<end
+                                            <tr>
+                                                <td>$habitacion</td>
+                                                <td>$nombre</td>
+                                                <td>Ocupada</td>
+                                                <td>$total</td>
+                                                <td>$fecha_ingreso</td>
+                                                <td>$fecha_salida</td>
+                                                <td>
+                                                    <a href="./paginaAgregarCostos.php?id_cliente=$id_cliente" class="btn btn-success btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                         <i class="fas fa-shopping-cart"></i>
+                                                    </span>
+                                                        <span class="text">Agregar Costos</span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="../controler/salidaCliente.controler.php?id_cliente=$id_cliente" class="btn btn-success btn-icon-split
+                                                    bg-gradient-danger">
+                                                    <span class="icon text-white-50">
+                                                         <i class="fas fa-long-arrow-alt-right"></i>
+                                                    </span>
+                                                        <span class="text">Salir del Hotel</span>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                           end;
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

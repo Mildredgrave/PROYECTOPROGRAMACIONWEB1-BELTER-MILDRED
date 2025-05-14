@@ -103,7 +103,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <form class="user" method="post" action="../controler/clientes.controles.php">
+                            <form class="user" method="post" action="../controler/clientes.controler.php">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Nombre</label>

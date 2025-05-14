@@ -39,7 +39,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="controler/clientes.controles.php" method="POST">
+                        <form action="controler/clientes.controler.php" method="POST">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombres:</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" maxlength="50" required>

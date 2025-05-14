@@ -1,5 +1,6 @@
 <?php
 require_once '../model/cargo.model.php';
+$id_cliente = $_GET['id_cliente'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,20 +107,23 @@ require_once '../model/cargo.model.php';
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <form class="user" method="post" action="../controler/clientes.controles.php">
+                            <form class="user" method="post" action="../controler/agregarCostos.controler.php">
                                 <div class="form-group row">
+                                    <input type="hidden" name="id_cliente" value="<?php echo $id_cliente; ?>">
                                     <div class="col-sm-12">
-                                        <label for="exampleFormControlSelect2" class="ml-4">Example multiple select</label>
-                                        <select multiple class="form-control ml-4" id="exampleFormControlSelect2">
+                                        <label class="ml-4">Example multiple select</label>
+                                        <select multiple class="form-control ml-4" id="id_cargo" name="costos[]">
                                             <?php
                                                 $objeto_cargo = new CargoModel();
                                                 $obtener_cargos = $objeto_cargo->obtenerCargosAlimentos();
 
                                                 foreach ( $obtener_cargos as $registros ) {
                                                     $linea_data = $registros['descripcion'] . ' ' . $registros['precio_cargo'];
-                                                    echo <<<END
-                                                    <option>$linea_data</option>
-                                                    END;
+                                                    $id_cargo = $registros['id_cargo'];
+                                                    $precio = $registros['precio_cargo'];
+                                                    $json_value = json_encode(['id_costo' => $id_cargo, 'precio' => $precio]);
+
+                                                    echo "<option value='{$json_value}'>{$linea_data}</option>";
                                                 }
                                             ?>
                                         </select>
