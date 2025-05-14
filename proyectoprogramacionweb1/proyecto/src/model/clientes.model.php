@@ -55,5 +55,23 @@ class ClientesModel {
 
         return $clientes;
     }
+    public function actualizarCliente($datos) {
+        $db = Database::getInstance();
+
+        $sql = "UPDATE clientes 
+            SET fecha_salida = :fecha_salida 
+            WHERE id_cliente = :id_cliente
+            ";
+
+        $stmt = $db->prepare($sql);
+
+        $valor = false;
+        if ( $stmt->execute($datos) ) {
+            $valor = true;
+        }
+
+        return $valor;
+    }
+
 }
 ?>

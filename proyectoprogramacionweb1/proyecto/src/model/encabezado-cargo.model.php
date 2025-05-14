@@ -62,4 +62,23 @@ class EncabezadoCargoModel{
 
         return $valor;
     }
+
+    public function actualizarEstatusEncabezado($id_cliente) {
+        $db = Database::getInstance();
+
+        $sql = "UPDATE encabezado_cargo 
+            SET estatus_cargo = 0
+            WHERE id_cliente = :id_cliente
+            ";
+
+        $stmt = $db->prepare($sql);
+
+        $valor = false;
+
+        if ( $stmt->execute(['id_cliente' => $id_cliente]) ) {
+            $valor = true;
+        }
+
+        return $valor;
+    }
 }
