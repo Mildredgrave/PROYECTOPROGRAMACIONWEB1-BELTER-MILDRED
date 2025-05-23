@@ -32,7 +32,7 @@ class ReservacionesModel {
         ORDER BY fecha_entrada " . $order);
 
         $stmt->execute(['fecha' => $fecha]);
-        $reservaciones = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
+        $reservaciones = $stmt->fetchAll();
 
         return $reservaciones;
     }
