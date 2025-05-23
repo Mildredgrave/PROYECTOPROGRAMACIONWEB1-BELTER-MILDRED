@@ -14,8 +14,8 @@
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
@@ -95,29 +95,89 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <h1 class="h3 mb-2 text-gray-800">Agregar Cargos</h1>
-                <p class="mb-4">Esta parte nos servira para agregar otros servicios o cargos al cliente.</p>
+                <h1 class="h3 mb-2 text-gray-800">Ingresar Clientes</h1>
+                <p class="mb-4">Ingreso de clientes para una habitación del hotel.</p>
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Seleccionar Productos Nombre Cliente</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Formulario de clientes</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <form class="user" method="post" action="../controler/clientes.controles.php">
+                            <form class="user" method="post" action="../controler/clientes.controler.php">
                                 <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <label for="exampleFormControlSelect2" class="ml-4">Example multiple select</label>
-                                        <select multiple class="form-control ml-4" id="exampleFormControlSelect2">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>Nombre</label>
+                                        <input type="text" class="form-control form-control-user ml-2""
+                                               id="nombre" name="nombre" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Apellido</label>
+                                        <input type="text" class="form-control form-control-user ml-2"
+                                               id="apellido" name="apellido">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                        <label>Fecha de nacimiento</label>
+                                        <input type="date" class="form-control form-control-user ml-2"
+                                               id="fechaNacimiento" name="fechaNacimiento" required>
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>DPI/Pasaporte</label>
+                                        <input type="text" class="form-control form-control-user ml-2"
+                                               id="documentoDeIdentificacion" name="documentoDeIdentificacion">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>Teléfono</label>
+                                        <input type="text" class="form-control form-control-user ml-2"
+                                               id="telefono" name="telefono">
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>NIT</label>
+                                        <input type="text" class="form-control form-control-user ml-2"
+                                               id="nit" name="nit">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                        <legend class="col-form-label col-sm-10 float-sm-left pt-0">Genero</legend>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="genero" id="genero1" value="F" checked>
+                                                <label class="form-check-label" for="genero1">
+                                                    Masculino
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="genero" id="genero2" value="M">
+                                                <label class="form-check-label" for="genero2">
+                                                    Femenino
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <legend class="col-form-label col-sm-10 float-sm-left pt-0">Dicapacidad</legend>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad1" value="Si" checked>
+                                                <label class="form-check-label" for="discapacidad">
+                                                    Si
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad2" value="No">
+                                                <label class="form-check-label" for="discapacidad2">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div  class="form-group">
-                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Agregar Cargos">
+                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Guardar">
                                 </div>
                             </form>
                         </div>
