@@ -45,14 +45,14 @@
                                 <form class="user" method="post" action="./controler/login.controler.php">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user"
-                                               id="usuario" placeholder="Ingrese su Usuario" name="usuario"
-                                               value="<?php echo isset($_GET['usuario']) ? htmlspecialchars($_GET['usuario']) : ''; ?>"
-                                               required>
+                                                id="usuario" placeholder="Ingrese su Usuario" name="usuario"
+                                                value="<?php echo isset($_GET['usuario']) ? htmlspecialchars($_GET['usuario']) : ''; ?>"
+                                                required>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user"
-                                               id="contrasenia" placeholder="Ingrese su Contraseña" name="contrasenia"
-                                               required>
+                                                id="contrasenia" placeholder="Ingrese su Contraseña" name="contrasenia"
+                                                required>
                                     </div>
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-primary btn-user btn-block" value="Ingresar">
