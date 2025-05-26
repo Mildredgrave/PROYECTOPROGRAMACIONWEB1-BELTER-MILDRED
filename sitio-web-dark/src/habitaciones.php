@@ -8,9 +8,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body class="bg-dark text-light">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <img src="imagenes/logohotel.png" alt="Logo Hotel" width="40" height="40">
@@ -21,8 +21,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.php">Iniciar sesión</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="index.php">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="login.php">Iniciar sesión</a></li>
                 </ul>
             </div>
         </div>
@@ -77,7 +77,7 @@
 
             foreach ($habitaciones as $hab) {
                 echo '<div class="col-md-4 mb-4">';
-                echo '  <div class="card h-100 shadow">';
+                echo '  <div class="card h-100 shadow bg-secondary text-white">';
                 echo '    <img src="' . $hab['imagen'] . '" class="card-img-top" alt="Imagen de habitación">';
                 echo '    <div class="card-body">';
                 echo '      <h5 class="card-title">' . $hab['nombre'] . '</h5>';
@@ -91,17 +91,17 @@
     </div>
 
     <div class="container">
-            <footer class="py-5">
-                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                    <p>&copy; 2025 Hotel Paraíso.</p>
-                    <ul class="list-unstyled d-flex">
-                        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter"></i></a></li>
-                        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i></a></li>
-                        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook"></i></a></li>
-                    </ul>
-                </div>
-            </footer>
-        </div>
+        <footer class="py-5 text-light bg-dark">
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top border-light">
+                <p>&copy; 2025 Hotel Paraíso.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-light" href="#"><i class="bi bi-twitter"></i></a></li>
+                    <li class="ms-3"><a class="link-light" href="#"><i class="bi bi-instagram"></i></a></li>
+                    <li class="ms-3"><a class="link-light" href="#"><i class="bi bi-facebook"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
