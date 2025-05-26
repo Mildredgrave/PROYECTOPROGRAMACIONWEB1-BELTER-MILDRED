@@ -1,26 +1,33 @@
 <?php
-    if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-        $usuarios = array(
-            array(
-                'usuario' => 'admin',
-                'contrasenia' => 'admin'
-            )
-        );
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $usuarios = array(
+        array(
+            'usuario' => 'admin',
+            'contrasenia' => 'admin'
+        )
+    );
 
-        foreach ( $usuarios as $rg ) {
-            if ( $rg['usuario'] = $_POST['usuario'] &&
-                $rg['contrasenia'] = $_POST['contrasenia']
-            ) {
-                echo '<script>window.location.href = "../view/paginaCarga.php"</script>>';
-                exit();
-            } else {
-                echo "<script>
-                    alert('Algo salio mal al iniciar sesión.);
-                    window.location.href = '../login.php';
-                </script>";
-                exit();
-            }
+    $usuarioValido = false;
+
+    foreach ($usuarios as $rg) {
+        if (
+            $rg['usuario'] === $_POST['usuario'] &&
+            $rg['contrasenia'] === $_POST['contrasenia']
+        ) {
+            $usuarioValido = true;
+            break;
         }
     }
 
+    if ($usuarioValido) {
+        // Redirigir a la página principal si las credenciales son correctas
+        echo '<script>window.location.href = "../view/paginaCarga.php";</script>';
+        exit();
+    } else {
+        // Redirigir al login con error y pasar el usuario para mostrarlo en el campo
+        $usuarioIngresado = urlencode($_POST['usuario']);
+        header("Location: ../login.php?error=1&usuario=$usuarioIngresado");
+        exit();
+    }
+}
 ?>
