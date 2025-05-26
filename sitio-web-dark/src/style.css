@@ -8,3 +8,22 @@ body {
 }
 
 
+#nombre::placeholder {
+    color: #cccccc;  /* gris claro */
+}
+
+#apellido::placeholder {
+    color: #cccccc;  /* gris claro */
+}
+
+#nit::placeholder {
+    color: #cccccc;  /* gris claro */
+}
+
+#telefono::placeholder {
+    color: #cccccc;  /* gris claro */
+}
+
+#documentoDeIdentificacion::placeholder {
+    color: #cccccc;  /* gris claro */
+}
