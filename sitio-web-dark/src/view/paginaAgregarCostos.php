@@ -22,7 +22,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="bg-dark text-white">
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -64,12 +64,12 @@
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column bg-dark">
 
         <!-- Main Content -->
         <div id="content">
             <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <nav class="navbar navbar-expand navbar-dark topbar mb-4 static-top shadow" style="background-color: #111;">
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
@@ -84,7 +84,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Empleado</span>
+                                <span class="mr-2 d-none d-lg-inline text-white small">Empleado</span>
                                 <img class="img-profile rounded-circle"
                                      src="../img/undraw_profile.svg">
                             </a>
@@ -95,19 +95,19 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <h1 class="h3 mb-2 text-gray-800">Agregar Cargos</h1>
+                <h1 class="h3 mb-2 text-white">Agregar Cargos</h1>
                 <p class="mb-4">Esta parte nos servira para agregar otros servicios o cargos al cliente.</p>
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Seleccionar Productos Nombre Cliente</h6>
+                    <div class="card-header py-3 bg-dark text-white">
+                        <h6 class="m-0 font-weight-bold">Seleccionar Productos Nombre Cliente</h6>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
+                    <div class="card-body bg-dark text-white">
+                        <div class="table-responsive bg-dark text-white">
                             <form class="user" method="post" action="../controler/clientes.controles.php">
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <label for="exampleFormControlSelect2" class="ml-4">Example multiple select</label>
-                                        <select multiple class="form-control ml-4" id="exampleFormControlSelect2">
+                                        <label for="exampleFormControlSelect2" class="ml-4">Seleccionar Productos</label>
+                                        <select multiple class="form-control bg-dark text-white border-secondary ml-4" id="exampleFormControlSelect2">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -116,7 +116,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div  class="form-group">
+                                <div class="form-group">
                                     <input type="submit" class="btn btn-primary btn-user btn-block" value="Agregar Cargos">
                                 </div>
                             </form>
@@ -128,7 +128,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
+        <footer class="sticky-footer bg-dark text-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                     <span>Copyright &copy; Hotel Paraiso 2025</span>
