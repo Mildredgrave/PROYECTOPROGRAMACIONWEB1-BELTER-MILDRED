@@ -48,7 +48,6 @@
                 <span>Página Principal</span></a>
         </li>
 
-
         <li class="nav-item">
             <a class="nav-link" href="./ingresoClientes.php">
                 <i class="fas fa-fw fa-user"></i>
@@ -64,19 +63,17 @@
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column bg-dark">
 
         <!-- Main Content -->
         <div id="content">
 
-            <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Topbar con fondo más oscuro -->
+            <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: #111;">
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -85,27 +82,27 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Empleado</span>
-                            <img class="img-profile rounded-circle"
-                                 src="../img/undraw_profile.svg">
+                            <span class="mr-2 d-none d-lg-inline text-white small">Empleado</span>
+                            <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
                         </a>
                     </li>
                 </ul>
             </nav>
 
             <!-- Begin Page Content -->
-            <div class="container-fluid">
+            <div class="container-fluid bg-dark text-white">
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Hotel Paraiso</h1>
-                <p class="mb-4">Información sobre clientes y habitaciones.</p>
-                <!-- DataTales Example -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                <h1 class="h3 mb-2 text-white">Hotel Paraiso</h1>
+                <p class="mb-4 text-white">Información sobre clientes y habitaciones.</p>
+
+                <!-- DataTables Example -->
+                <div class="card shadow mb-4 bg-dark text-white">
+                    <div class="card-header py-3 bg-secondary text-white">
+                        <h6 class="m-0 font-weight-bold text-white">DataTables Example</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table table-bordered table-dark" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
                                     <th>Habitación</th>
@@ -128,18 +125,17 @@
                                     <td>2011/04/25</td>
                                     <td>
                                         <a href="./paginaAgregarCostos.php" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                             <i class="fas fa-shopping-cart"></i>
-                                        </span>
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </span>
                                             <span class="text">Agregar Costos</span>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-success btn-icon-split
-                                        bg-gradient-danger">
-                                        <span class="icon text-white-50">
-                                             <i class="fas fa-long-arrow-alt-right"></i>
-                                        </span>
+                                        <a href="#" class="btn btn-danger btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-long-arrow-alt-right"></i>
+                                            </span>
                                             <span class="text">Salir del Hotel</span>
                                         </a>
                                     </td>
@@ -149,15 +145,15 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- /.container-fluid -->
+
 
         </div>
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
+        <footer class="sticky-footer bg-dark text-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                     <span>Copyright &copy; Hotel Paraiso 2025</span>
