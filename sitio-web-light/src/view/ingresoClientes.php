@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header('Location: ../login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +57,6 @@
                 <span>Página Principal</span></a>
         </li>
 
-
         <li class="nav-item">
             <a class="nav-link" href="./ingresoClientes.php">
                 <i class="fas fa-fw fa-user"></i>
@@ -69,27 +77,27 @@
         <!-- Main Content -->
         <div id="content">
             <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <nav class="navbar navbar-expand navbar-dark topbar mb-4 static-top shadow">
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
+
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
+                    <div class="topbar-divider d-none d-sm-block"></div>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Empleado</span>
-                                <img class="img-profile rounded-circle"
-                                     src="../img/undraw_profile.svg">
-                            </a>
-                        </li>
-                    </ul>
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-dark small">
+                                <?php echo htmlspecialchars($_SESSION['usuario']); ?>
+                            </span>
+                            <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
+                        </a>
+                    </li>
+                </ul>
             </nav>
             <!-- End of Topbar -->
 
@@ -107,7 +115,7 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Nombre</label>
-                                        <input type="text" class="form-control form-control-user ml-2""
+                                        <input type="text" class="form-control form-control-user ml-2"
                                                id="nombre" name="nombre" required>
                                     </div>
                                     <div class="col-sm-6">
@@ -116,6 +124,7 @@
                                                id="apellido" name="apellido">
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <div class="col-sm-6">
                                         <label>Fecha de nacimiento</label>
@@ -128,6 +137,7 @@
                                                id="documentoDeIdentificacion" name="documentoDeIdentificacion">
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <label>Teléfono</label>
@@ -140,43 +150,34 @@
                                                id="nit" name="nit">
                                     </div>
                                 </div>
+
+                                <!-- Género y Discapacidad -->
                                 <div class="form-group row">
-                                    <div class="col-sm-6">
-                                        <legend class="col-form-label col-sm-10 float-sm-left pt-0">Genero</legend>
-                                        <div class="col-sm-10">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="genero" id="genero1" value="F" checked>
-                                                <label class="form-check-label" for="genero1">
-                                                    Masculino
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="genero" id="genero2" value="M">
-                                                <label class="form-check-label" for="genero2">
-                                                    Femenino
-                                                </label>
-                                            </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="d-block">Género</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="genero" id="genero1" value="M" checked>
+                                            <label class="form-check-label" for="genero1">Masculino</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="genero" id="genero2" value="F">
+                                            <label class="form-check-label" for="genero2">Femenino</label>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <legend class="col-form-label col-sm-10 float-sm-left pt-0">Dicapacidad</legend>
-                                        <div class="col-sm-10">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad1" value="Si" checked>
-                                                <label class="form-check-label" for="discapacidad">
-                                                    Si
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad2" value="No">
-                                                <label class="form-check-label" for="discapacidad2">
-                                                    No
-                                                </label>
-                                            </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="d-block">Discapacidad</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad1" value="Si" checked>
+                                            <label class="form-check-label" for="discapacidad1">Sí</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="discapacidad" id="discapacidad2" value="No">
+                                            <label class="form-check-label" for="discapacidad2">No</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div  class="form-group">
+
+                                <div class="form-group">
                                     <input type="submit" class="btn btn-primary btn-user btn-block" value="Guardar">
                                 </div>
                             </form>
@@ -184,8 +185,8 @@
                     </div>
                 </div>
             </div>
+            <!-- End Page Content -->
         </div>
-        <!-- End of Main Content -->
 
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
@@ -195,13 +196,12 @@
                 </div>
             </div>
         </footer>
-        <!-- End of Footer -->
+        <!-- End Footer -->
 
     </div>
-    <!-- End of Content Wrapper -->
-
+    <!-- End Content Wrapper -->
 </div>
-<!-- End of Page Wrapper -->
+<!-- End Page Wrapper -->
 
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
@@ -214,14 +214,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body">Selecciona "Logout" abajo si estás listo para finalizar la sesión actual.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                 <a class="btn btn-primary" href="login.html">Logout</a>
             </div>
         </div>

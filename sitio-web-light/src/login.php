@@ -7,8 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Hotel Paraiso - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,6 +25,24 @@
 </head>
 
 <body class="bg-gradient-primary">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="imagenes/logohotel.png" alt="Logo Hotel" width="40" height="40">
+            Hotel Paraíso
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../src/index.php#carouselHotel">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="../src/index.php#misionVision">Misión y Visión</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <div class="container">
     <!-- Outer Row -->
@@ -32,7 +56,7 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">El Paraiso</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Bienvenido al Hotel El Paraiso</h1>
                                 </div>
 
                                 <!-- Mensaje de error si lo hay -->
