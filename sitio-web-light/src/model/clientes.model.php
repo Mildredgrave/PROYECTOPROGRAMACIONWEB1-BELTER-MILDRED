@@ -5,7 +5,6 @@ class ClientesModel {
         $db = Database::getInstance();
 
         unset($datos['reservacion']);
-        var_dump($datos);
         $sql = "INSERT INTO clientes (
                 nombre, 
                 apellido, 
@@ -35,5 +34,44 @@ class ClientesModel {
 
         return $valor;
     }
+
+    public function obtenerClientesTabla() {
+        $db = Database::getInstance();
+        $stmt = $db->prepare("SELECT 
+            e.total, 
+            e.estatus_cargo,
+            c.nombre, 
+            c.id_cliente, 
+            c.apellido, 
+            c.fecha_registro_habitacion, 
+            c.fecha_salida, 
+            h.nombre_habitacion 
+            FROM encabezado_cargo AS e 
+            INNER JOIN clientes as c on e.id_cliente = c.id_cliente
+            INNER JOIN habitaciones as h on e.id_habitacion = h.id_habitacion
+            WHERE estatus_cargo = 1 ORDER BY h.id_habitacion ASC;");
+        $stmt->execute();
+        $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $clientes;
+    }
+    public function actualizarCliente($datos) {
+        $db = Database::getInstance();
+
+        $sql = "UPDATE clientes 
+            SET fecha_salida = :fecha_salida 
+            WHERE id_cliente = :id_cliente
+            ";
+
+        $stmt = $db->prepare($sql);
+
+        $valor = false;
+        if ( $stmt->execute($datos) ) {
+            $valor = true;
+        }
+
+        return $valor;
+    }
+
 }
 ?>

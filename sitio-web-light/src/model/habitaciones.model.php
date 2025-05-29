@@ -16,29 +16,6 @@ class HabitacionesModel{
         $stmt = $db->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    public function actualizarEstatusHabitacion($datos) {
-        $db = Database::getInstance();
-        $datos_habitacion = array(
-            'id_habitacion' => $datos['id_habitacion'],
-            'estatus_habitacion' => 1
-        );
-
-        $sql = "UPDATE habitaciones 
-            SET estatus_habitacion = :estatus_habitacion 
-            WHERE id_habitacion = :id_habitacion
-            ";
-
-        $stmt = $db->prepare($sql);
-
-        $valor = false;
-
-        if ( $stmt->execute($datos_habitacion) ) {
-            $valor = true;
-        }
-
-        return $valor;
-    }
 }
 
 ?>
