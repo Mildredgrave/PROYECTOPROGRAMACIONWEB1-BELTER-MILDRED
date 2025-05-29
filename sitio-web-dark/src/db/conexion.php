@@ -5,8 +5,8 @@ class Database {
 
     private function __construct() {
         $config = [
-            'host' => 'mysql-db',
-            'port' => '3306',
+            'host' => '172.17.65.46', // IP de la computadora donde corre Docker/MySQL
+            'port' => '3307',
             'dbname' => 'my_database',
             'username' => 'root',
             'password' => 'root_password'
@@ -23,7 +23,7 @@ class Database {
             $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
         } catch(PDOException $e) {
-            error_log("Error de conexión (puerto 3307): " . $e->getMessage());
+            error_log("Error de conexión: " . $e->getMessage());
             throw new Exception("Error al conectar con la base de datos en el puerto 3307");
         }
     }

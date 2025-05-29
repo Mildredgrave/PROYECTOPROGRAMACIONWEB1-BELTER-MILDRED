@@ -39,10 +39,8 @@ class ClienteData {
             $objeto_reservacion = new ReservacionesModel();
             $reservas = $objeto_reservacion->obtenerInformacionReservaFecha($order, $fecha);
             $habitacion = $objeto_habitaciones->obtenerhabitacionesPorEdadReservas($order, $reservas);
-        } else {
-
         }
-
+        var_dump($habitacion);
         $habitacio_asignada = array();
         if ( !empty($habitacion) ) {
             $habitacio_asignada = $habitacion[0];

@@ -25,6 +25,4 @@ class EncabezadoCargoModel{
 
         return $valor;
     }
-
-    public function obtenerEncabezadoActivo()
 }
