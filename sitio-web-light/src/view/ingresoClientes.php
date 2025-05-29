@@ -76,7 +76,7 @@
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
-<<<<<<< Updated upstream
+
                     <div class="topbar-divider d-none d-sm-block"></div>
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
@@ -89,22 +89,7 @@
                         </a>
                     </li>
                 </ul>
-=======
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Empleado</span>
-                                <img class="img-profile rounded-circle"
-                                     src="../img/undraw_profile.svg">
-                            </a>
-                        </li>
-                    </ul>
->>>>>>> Stashed changes
             </nav>
             <!-- End of Topbar -->
 

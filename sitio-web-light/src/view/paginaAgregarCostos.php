@@ -1,18 +1,17 @@
 <?php
-<<<<<<< Updated upstream
+
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
     header('Location: ../login.php');
     exit;
 }
-?>
 
-=======
 require_once '../model/cargo.model.php';
 $id_cliente = $_GET['id_cliente'];
 ?>
->>>>>>> Stashed changes
+
+
 <!DOCTYPE html>
 <html lang="en">
 
